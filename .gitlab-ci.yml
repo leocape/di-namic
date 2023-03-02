@@ -1,0 +1,35 @@
+image: node:latest
+
+stages:
+- build
+- analyse
+- test
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm install
+
+include:
+- template: Security/SAST.gitlab-ci.yml
+- template: Dependency-Scanning.gitlab-ci.yml
+
+sast:
+  stage: analyse
+  script: echo 'Running SAST...'
+
+variables:
+  SAST_EXCLUDED_PATHS: "test"
+
+test:node:8:
+  image: node:8
+  script:
+  - npm test
+test:node:latest:
+  image: node:latest
+  script:
+  - npm test

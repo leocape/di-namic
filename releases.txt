@@ -1,0 +1,43 @@
+v0.1.1
+------
+- Added registerFactory method to container
+- Added createInstance method to container
+
+v0.1.2
+------
+- fix to resolve issue with non-prototype factory
+
+v0.1.21
+-------
+- missing exports in index.js
+
+v0.1.22
+-------
+- issue resolving factory generated constructor argument
+
+v0.1.3
+------
+- added singleton functionality
+
+v0.1.31
+------
+- added factory singleton functionality
+
+v0.1.4
+------
+- added constructor args to factory registration
+
+v0.1.41
+------
+- using spread operator
+
+v0.2.0
+------
+- using async
+
+v0.3.0
+------
+- added new ContainerV2 to simplify number of register methods
+    - ContainerV2 is a class
+    - ContainerV2 methods now use async (ie: return Promises by default)
+- Container is marked as deprecated
